@@ -54,10 +54,19 @@ describe('Park', function() {
     assert.deepStrictEqual(results, [dinosaur1, dinosaur5]);
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day', function () {
+    const result = park.visitorsPerDay();
+    assert.strictEqual(result, 150);
+  });
 
-  it('should be able to calculate the total number of visitors per year');
+  it('should be able to calculate the total number of visitors per year', function () {
+    const result = park.visitorsPerYear();
+    assert.strictEqual(result, 54750);
+  });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function () {
+    const result = park.yearlyRevenue();
+    assert.strictEqual(result, 54750000);
+  });
 
 });

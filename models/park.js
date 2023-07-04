@@ -41,4 +41,22 @@ Park.prototype.filterDinosaursBySpecies = function (species) {
     return dinosaurs;
 };
 
+Park.prototype.visitorsPerDay = function () {
+    let visitors = 0;
+    for (const currentDino of this.dinosaurs) {
+        visitors = visitors + currentDino.guestsAttractedPerDay;
+    }
+    return visitors;
+};
+
+Park.prototype.visitorsPerYear = function () {
+    const visitors = this.visitorsPerDay() * 365;
+    return visitors;
+};
+
+Park.prototype.yearlyRevenue = function () {
+    const revenue = this.visitorsPerYear() * this.ticketPrice;
+    return revenue;
+};
+
 module.exports = Park;
