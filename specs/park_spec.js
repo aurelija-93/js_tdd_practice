@@ -42,9 +42,17 @@ describe('Park', function() {
     assert.deepStrictEqual(park.dinosaurs, [dinosaur1, dinosaur2]);
   });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function () {
+    const result = park.mostPopularDinosaur();
+    assert.deepStrictEqual(result, dinosaur2);
+  });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function () {
+    let dinosaur5 = new Dinosaur('t-rex', 'carnivore', 55);
+    park.addDinosaur(dinosaur5);
+    const results = park.filterDinosaursBySpecies('t-rex');
+    assert.deepStrictEqual(results, [dinosaur1, dinosaur5]);
+  });
 
   it('should be able to calculate the total number of visitors per day');
 
