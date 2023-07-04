@@ -3,9 +3,18 @@ const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
+  let dinosaur1;
+  let dinosaur2;
+  let dinosaur3;
+  let dinosaur4;
+  let park;
 
   beforeEach(function () {
-
+    dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
+    dinosaur2 = new Dinosaur('diplodocus', 'herbivore', 60);
+    dinosaur3 = new Dinosaur('velociraptor', 'carnivore', 40);
+    dinosaur4 = new Dinosaur('stegosaurus', 'herbivore', 35);
+    park = new Park('Jurrasic Park', 1000, [dinosaur1, dinosaur2, dinosaur3]);
   })
 
   it('should have a name');
