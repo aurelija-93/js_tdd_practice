@@ -69,4 +69,16 @@ describe('Park', function() {
     assert.strictEqual(result, 54750000);
   });
 
+  it('should be able to remove all dinosaurs of a particular species', function () {
+    let dinosaur5 = new Dinosaur('t-rex', 'carnivore', 55);
+    park.addDinosaur(dinosaur5);
+    park.removeDinosaursBySpecies('t-rex');
+    assert.deepStrictEqual(park.dinosaurs, [dinosaur2, dinosaur3]);
+  });
+
+  it('should be able to provide a count of dinosaurs for each diet type', function () {
+    const result = park.countDinosaursByDiet();
+    assert.deepStrictEqual(result, { 'carnivore': 2, 'herbivore': 1, 'omnivore': 0 });
+  });
+
 });
