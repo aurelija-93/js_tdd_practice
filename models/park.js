@@ -75,16 +75,19 @@ Park.prototype.countDinosaursByDiet = function () {
         'herbivore': 0,
         'omnivore': 0
     };
+    // for (const currentDino of this.dinosaurs) {
+    //     if (currentDino.diet == 'carnivore') {
+    //         dinosByDiet['carnivore'] = dinosByDiet['carnivore'] + 1;
+    //     }
+    //     if (currentDino.diet == 'herbivore') {
+    //         dinosByDiet['herbivore'] = dinosByDiet['herbivore'] + 1;
+    //     }
+    //     if (currentDino.diet == 'omnivore') {
+    //         dinosByDiet['omnivore'] = dinosByDiet['omnivore'] + 1;
+    //     }
+    // }
     for (const currentDino of this.dinosaurs) {
-        if (currentDino.diet == 'carnivore') {
-            dinosByDiet['carnivore'] = dinosByDiet['carnivore'] + 1;
-        }
-        if (currentDino.diet == 'herbivore') {
-            dinosByDiet['herbivore'] = dinosByDiet['herbivore'] + 1;
-        }
-        if (currentDino.diet == 'omnivore') {
-            dinosByDiet['omnivore'] = dinosByDiet['omnivore'] + 1;
-        }
+        dinosByDiet[currentDino.diet] = dinosByDiet[currentDino.diet] + 1;
     }
     return dinosByDiet;
 };
