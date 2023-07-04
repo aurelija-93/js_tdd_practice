@@ -14,14 +14,23 @@ describe('Park', function() {
     dinosaur2 = new Dinosaur('diplodocus', 'herbivore', 60);
     dinosaur3 = new Dinosaur('velociraptor', 'carnivore', 40);
     dinosaur4 = new Dinosaur('stegosaurus', 'herbivore', 35);
-    park = new Park('Jurrasic Park', 1000, [dinosaur1, dinosaur2, dinosaur3]);
-  })
+    park = new Park('Jurassic Park', 1000, [dinosaur1, dinosaur2, dinosaur3]);
+  });
 
-  it('should have a name');
+  it('should have a name', function () {
+    const actual = park.name;
+    assert.strictEqual(actual, 'Jurassic Park');
+  });
 
-  it('should have a ticket price');
+  it('should have a ticket price', function () {
+    const actual = park.ticketPrice;
+    assert.strictEqual(actual, 1000);
+  });
 
-  it('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function () {
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual, [dinosaur1, dinosaur2, dinosaur3]);
+  });
 
   it('should be able to add a dinosaur to its collection');
 
